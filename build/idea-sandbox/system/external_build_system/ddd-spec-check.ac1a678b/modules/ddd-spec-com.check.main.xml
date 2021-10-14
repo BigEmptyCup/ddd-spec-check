@@ -1,0 +1,146 @@
+<module>
+  <component name="DeprecatedModuleOptionManager">
+    <option key="type" value="JAVA_MODULE" />
+  </component>
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.ddd.spec.com.check" externalSystemModuleType="sourceSet" externalSystemModuleVersion="1.0-SNAPSHOT" linkedProjectId="ddd-spec-com.check:main" linkedProjectPath="$MODULE_DIR$/../.." rootProjectPath="$MODULE_DIR$/../.." />
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: com.jetbrains:ideaIC:2021.2">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/3rd-party.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-antlr.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-bcel.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-bsf.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-log4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-oro.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-regexp.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-resolver.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-apache-xalan2.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-commons-logging.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-commons-net.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-jai.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-javamail.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-jdepend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-jmf.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-jsch.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-junit.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-junit4.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-junitlauncher.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-launcher.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-netrexx.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-swing.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-testutil.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/ant/lib/ant-xz.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/asm-7.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/asm-analysis-7.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/asm-commons-7.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/asm-tree-7.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/asm-util-7.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/async-profiler-2.1-ea-2.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/bootstrap.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/byte-buddy-agent-1.10.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/coverage-common.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/dbus-java-3.2.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/dexlib2.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/dom-impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/dom-openapi.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/duplicates-analysis.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/error_prone_annotations-2.3.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/external-system-rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/find-action-model-0.0.3.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/forms_rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/grazie-spellchecker-0.1.9.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/groovy-2.5.14.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/groovy-json-2.5.14.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/groovy-jsr223-2.5.14.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/groovy-templates-2.5.14.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/groovy-xml-2.5.14.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/grpc-netty-shaded-1.34.1.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/idea_rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/intellij-coverage-agent-1.0.589.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/intellij-test-discovery-agent-1.0.589.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/isorelax-20030108.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/java-string-similarity-2.0.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/java-utils-1.0.6.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jdkAnnotations.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jffi-1.2.19.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jffi-1.2.19-native.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jing-20030619.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jna.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jna-platform.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-a64asm-1.0.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-constants-0.9.12.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-enxio-0.21.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-ffi-2.1.10.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-posix-3.0.50.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-unixsocket-0.23.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jnr-x86asm-1.0.2.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jps-model.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jshell-frontend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jsp-base-openapi.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit4.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlin-gradle-plugin-model-1.4.32.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlin-reflect-1.5.10-release-896.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlin-stdlib-jdk8.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlin-test.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlinx-coroutines-debug-1.5.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlinx-coroutines-jdk8.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlinx-serialization-core-jvm-1.1.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/kotlinx-serialization-json-jvm-1.1.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/platform-api.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/platform-objectSerializer-annotations.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/platform-statistics-devkit.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/protobuf-java-3.15.8.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/pty4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/rd-core-0.212.307.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/rd-framework-0.212.307.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/rd-swing-0.212.307.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/rngom-20051226-patched.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/slf4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/sqlite-jdbc-3.34.0.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/stats.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/structuralsearch.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/testFramework.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/testFramework-java.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/testFramework.core.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/tests_bootstrap.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/tips-intellij-idea-community-212.23.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/trang-core.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/uast-tests.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/winp-1.28.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/xmlbeans-4.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2021.2/893e80ed562ac011eba527c13b64627ed6974c36/ideaIC-2021.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Gradle: cn.hutool:hutool-all:5.7.14" level="project" />
+    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Gradle: net.sourceforge.pmd:pmd-java:6.39.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.sourceforge.pmd:pmd-core:6.39.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.antlr:antlr4-runtime:4.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.alibaba:fastjson:1.2.78" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.jetbrains:annotations:22.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.sourceforge.saxon:saxon:9.1.0.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:9.2" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.beust:jcommander:1.48" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: net.sourceforge.saxon:saxon:dom:9.1.0.8" level="project" />
+  </component>
+</module>

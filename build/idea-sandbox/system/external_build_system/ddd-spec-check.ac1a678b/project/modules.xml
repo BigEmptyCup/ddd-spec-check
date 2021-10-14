@@ -1,0 +1,9 @@
+<project>
+  <component name="ExternalProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ddd-spec-com.check.iml" filepath="$PROJECT_DIR$/.idea/modules/ddd-spec-com.check.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ddd-spec-com.check.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ddd-spec-com.check.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ddd-spec-com.check.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ddd-spec-com.check.test.iml" />
+    </modules>
+  </component>
+</project>

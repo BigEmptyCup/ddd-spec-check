@@ -1,0 +1,42 @@
+<application>
+  <component name="ProjectPluginTrackerManager">
+    <trackers>
+      <map>
+        <entry key="1yJ7eCaP6p1JMoHMb7xXJolxzVP">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1zTksplReKz4qLTrYCPUB1tLFH1">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NextRunPlatformUpdateBuild" value="IC-212.5284.40/2021.2.2" />
+    <property name="NextRunPlatformUpdateVersion" value="2021.2.2" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="eclipse.projects.detected" value="" />
+    <property name="file.gist.reindex.count" value="164" />
+    <property name="fileTypeChangedCounter" value="4" />
+    <property name="fileTypeDetectors" value="com.android.tools.idea.fileTypes.profiler.MemoryCaptureFileType$Detector:com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector" />
+    <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="ide.updates.previous.build.number" value="IC-212.4746.92" />
+    <property name="ide.updates.whats.new.shown.for" value="212" />
+    <property name="installed.kotlin.plugin.version" value="212-1.5.10-release-IJ4746.92" />
+    <property name="kotlin-gradle-user-dirs" value="$USER_HOME$/.gradle" />
+    <property name="log.trace.categories" value="#com.jetbrains.rdserver.requests&#10;#com.jetbrains.rd.ide.document&#10;#com.jetbrains.rdserver.document&#10;#com.jetbrains.rdserver.editors&#10;#com.jetbrains.rdserver.actions&#10;#com.jetbrains.rdserver.permissions" />
+    <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
+    <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
+    <property name="packagesearch.status.updated.ts" value="1634180113535" />
+    <property name="registry.to.advanced.settings.migration.build" value="IC-212.4746.92" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+  </component>
+  <component name="ToolbarSettingsService">
+    <option name="NEW_TOOLBAR_SETTINGS" value="OLD_NAVBAR" />
+  </component>
+</application>
