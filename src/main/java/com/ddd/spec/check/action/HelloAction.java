@@ -1,13 +1,13 @@
 package com.ddd.spec.check.action;
 
+import cn.hutool.core.map.MapUtil;
 import com.google.common.collect.Lists;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import lombok.SneakyThrows;
 import net.sourceforge.pmd.*;
@@ -21,10 +21,8 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * 描述:
@@ -34,6 +32,26 @@ import java.util.List;
  */
 public class HelloAction extends AnAction {
 
+    private static Map<String, List<String>> moduleNameCheckMap = MapUtil.newHashMap();
+    private final String horLine = "-";
+    private static final String API = "api";
+    private static final String CONTROLLER = "controller";
+    private static final String APP = "app";
+    private static final String DOMAIN = "domain";
+    private static final String COMMON = "common";
+    private static final String INFRASTRUCTURE = "infrastructure";
+    private static final String BOOT = "boot";
+
+    static {
+        moduleNameCheckMap.put(API, Lists.newArrayList());
+        moduleNameCheckMap.put(COMMON, Lists.newArrayList());
+        moduleNameCheckMap.put(CONTROLLER, Lists.newArrayList(API, APP, COMMON));
+        moduleNameCheckMap.put(APP, Lists.newArrayList(DOMAIN, COMMON));
+        moduleNameCheckMap.put(DOMAIN, Lists.newArrayList(INFRASTRUCTURE, COMMON));
+        moduleNameCheckMap.put(INFRASTRUCTURE, Lists.newArrayList(COMMON, DOMAIN));
+        moduleNameCheckMap.put(BOOT, Lists.newArrayList(BOOT, API, COMMON, APP, CONTROLLER, DOMAIN, INFRASTRUCTURE));
+    }
+
     @SneakyThrows
     @Override
     public void actionPerformed(AnActionEvent e) {
@@ -42,25 +60,46 @@ public class HelloAction extends AnAction {
         Module module = e.getData(LangDataKeys.MODULE);
 
         PsiFile psiFile = e.getData(CommonDataKeys.PSI_FILE);
-        PsiElement psiElement = e.getData(CommonDataKeys.PSI_ELEMENT);
-        VirtualFile vsiFile = e.getData(CommonDataKeys.VIRTUAL_FILE);
-        List<VirtualFile> vsiFileList = Lists.newArrayList(e.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY));
+//        PsiElement psiElement = e.getData(CommonDataKeys.PSI_ELEMENT);
+//        VirtualFile vsiFile = e.getData(CommonDataKeys.VIRTUAL_FILE);
+//        List<VirtualFile> vsiFileList = Lists.newArrayList(e.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY));
 
-
-        /**依赖**/
-        ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
-        Module[] dependentModules = moduleRootManager.getDependencies();
-        String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
+        ModuleManager manager = ModuleManager.getInstance(project);
+        Module[] modules = manager.getModules();
+        Arrays.stream(modules).forEach(moduleItem -> {
+            String moduleName = moduleItem.getName();
+            String shortModuleName = moduleName.substring(moduleName.lastIndexOf(horLine) + 1);
+            if (!moduleNameCheckMap.containsKey(shortModuleName)) {
+                String tip = "模块名称：" + moduleName + "，不符合DDD模块命名规范（" + moduleNameCheckMap.keySet() + ")";
+                Messages.showInfoMessage(tip, "领域驱动-规范验证-结果");
+            }
+            /**依赖**/
+            ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(moduleItem);
+            String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
+            List<String> configDepModNames = moduleNameCheckMap.get(shortModuleName);
+            AtomicBoolean faultDep = new AtomicBoolean(false);
+            Arrays.stream(dependentModulesNames).forEach(dependentModuleName -> {
+                String substring = dependentModuleName.substring(dependentModuleName.lastIndexOf(horLine) + 1);
+                if (!configDepModNames.contains(substring)) {
+                    faultDep.set(true);
+                }
+            });
+            if (faultDep.get()) {
+                String tip = "模块名称：" + moduleName + "，不符合DDD模块依赖规范（模块："
+                        + moduleName + "--->" + configDepModNames + ",实际依赖了：" + Arrays.asList(dependentModulesNames) + ")";
+                Messages.showInfoMessage(tip, "领域驱动-规范验证-结果");
+            }
+        });
 
         //获取当前类文件的路径
         String classPath = psiFile.getVirtualFile().getPath();
-        String title = "Hello World+"+module.getName();
+        String title = "Hello World+" + module.getName();
 
         //显示对话框
 //        Messages.showMessageDialog(project, classPath, title, Messages.getInformationIcon());
 
         PMDConfiguration configuration = new PMDConfiguration();
-        String  textSrc = "/Users/bbking/Documents/ideaplugin/ddd-spec-check/src/main/java/test/TErrDto.java";
+        String textSrc = "/Users/bbking/Documents/ideaplugin/ddd-spec-check/src/main/java/test/TErrDto.java";
         configuration.setInputPaths(textSrc);
         configuration.setRuleSets("/Users/bbking/Documents/ideaplugin/ddd-spec-check/src/main/resources/rule/ali-naming.xml");
         //configuration.setReportFormat("json");
@@ -80,19 +119,19 @@ public class HelloAction extends AnAction {
             Report report = PMD.processFiles(configuration, ruleSets, files, Collections.singletonList(renderer));
             List<RuleViolation> violations = report.getViolations();
             StringBuilder msg = new StringBuilder();
-            for (RuleViolation ruleViolation:violations){
+            for (RuleViolation ruleViolation : violations) {
                 System.out.println(ruleViolation.getFilename());
                 System.out.println(ruleViolation.getDescription());
                 msg.append(ruleViolation.getFilename()).append("/n");
                 msg.append(ruleViolation.getDescription()).append("/n");
 
             }
-            Messages.showInfoMessage(msg.toString(),"领域驱动-规范验证-结果");
+            //Messages.showInfoMessage(msg.toString(), "领域驱动-规范验证-结果");
             renderer.end();
             renderer.flush();
-        } catch (IOException ex){
-            System.out.print(""+ex.getMessage());
-        }finally {
+        } catch (IOException ex) {
+            System.out.print("" + ex.getMessage());
+        } finally {
 //            ClassLoader auxiliaryClassLoader = configuration.getClassLoader();
 //            if (auxiliaryClassLoader instanceof ClasspathClassLoader) {
 //                try {
@@ -104,13 +143,13 @@ public class HelloAction extends AnAction {
         }
     }
 
-    private  Renderer createRenderer(Writer writer) {
+    private Renderer createRenderer(Writer writer) {
         XMLRenderer xml = new XMLRenderer("UTF-8");
         xml.setWriter(writer);
         return xml;
     }
 
-    private  List<DataSource> determineFiles(String basePath) throws IOException {
+    private List<DataSource> determineFiles(String basePath) throws IOException {
         Path dirPath = FileSystems.getDefault().getPath(basePath);
         final PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:*.java");
         final List<DataSource> files = new ArrayList<>();
