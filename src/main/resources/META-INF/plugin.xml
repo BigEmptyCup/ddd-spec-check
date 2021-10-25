@@ -23,9 +23,8 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
         <action id="hello" class="com.ddd.spec.check.action.HelloAction" text="DDD-规则校验" description="DDD-规则校验">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
 </idea-plugin>
