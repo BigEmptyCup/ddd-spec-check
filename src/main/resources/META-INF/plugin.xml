@@ -1,17 +1,17 @@
 <idea-plugin>
-    <id>com.ddd.spec.com.check.ddd-spec-com.check</id>
-    <name>领域驱动-DDD，规范检查</name>
+    <id>com.ddd.spec.com.check.ddd-spec-check</id>
+    <name>DDD Spec Check</name>
     <vendor email="1435760017@qq.com" url="https://github.com/BigEmptyCup/ddd-spec-check">Big Empty Cup</vendor>
 
     <description><![CDATA[
-    领域驱动-规范检查工具.<br>
-    模块检查<br>
-        模块名称<br>
-        模块数量<br>
-        模块依赖<br>
-    包检查<br>
-        包名称<br>
-        包限制<br>
+    DDD Spec Check Tools.<br>
+    Module Check<br>
+        Module Name<br>
+        Module Num<br>
+        Module Dependency<br>
+    Package Check<br>
+        Package Name<br>
+        Package Limit<br>
     ]]></description>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
