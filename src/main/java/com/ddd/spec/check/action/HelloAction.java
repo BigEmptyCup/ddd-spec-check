@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class HelloAction extends AnAction {
 
-    private static Map<String, List<String>> moduleNameCheckMap = MapUtil.newHashMap();
+    private static final Map<String, List<String>> MODULE_NAME_CHECK_MAP = MapUtil.newHashMap();
     private final String horLine = "-";
     private static final String API = "api";
     private static final String CONTROLLER = "controller";
@@ -42,14 +42,16 @@ public class HelloAction extends AnAction {
     private static final String INFRASTRUCTURE = "infrastructure";
     private static final String BOOT = "boot";
 
+    private static final List<String> EXTERNAL_NAME = Lists.newArrayList("nicetuan_scm_dichi", "bill-platform-manager", "user-info-center");
+
     static {
-        moduleNameCheckMap.put(API, Lists.newArrayList());
-        moduleNameCheckMap.put(COMMON, Lists.newArrayList());
-        moduleNameCheckMap.put(CONTROLLER, Lists.newArrayList(API, APP, COMMON));
-        moduleNameCheckMap.put(APP, Lists.newArrayList(DOMAIN, COMMON));
-        moduleNameCheckMap.put(DOMAIN, Lists.newArrayList(INFRASTRUCTURE, COMMON));
-        moduleNameCheckMap.put(INFRASTRUCTURE, Lists.newArrayList(COMMON, DOMAIN));
-        moduleNameCheckMap.put(BOOT, Lists.newArrayList(BOOT, API, COMMON, APP, CONTROLLER, DOMAIN, INFRASTRUCTURE));
+        MODULE_NAME_CHECK_MAP.put(API, Lists.newArrayList());
+        MODULE_NAME_CHECK_MAP.put(COMMON, Lists.newArrayList());
+        MODULE_NAME_CHECK_MAP.put(CONTROLLER, Lists.newArrayList(API, APP));
+        MODULE_NAME_CHECK_MAP.put(APP, Lists.newArrayList(DOMAIN));
+        MODULE_NAME_CHECK_MAP.put(DOMAIN, Lists.newArrayList(INFRASTRUCTURE, COMMON));
+        MODULE_NAME_CHECK_MAP.put(INFRASTRUCTURE, Lists.newArrayList(DOMAIN));
+        MODULE_NAME_CHECK_MAP.put(BOOT, Lists.newArrayList(BOOT, API, APP, CONTROLLER, DOMAIN, INFRASTRUCTURE));
     }
 
     @SneakyThrows
@@ -69,14 +71,14 @@ public class HelloAction extends AnAction {
         Arrays.stream(modules).forEach(moduleItem -> {
             String moduleName = moduleItem.getName();
             String shortModuleName = moduleName.substring(moduleName.lastIndexOf(horLine) + 1);
-            if (!moduleNameCheckMap.containsKey(shortModuleName)) {
-                String tip = "模块名称：" + moduleName + "，不符合DDD模块命名规范（" + moduleNameCheckMap.keySet() + ")";
+            if (!EXTERNAL_NAME.contains(moduleName) && !MODULE_NAME_CHECK_MAP.containsKey(shortModuleName)) {
+                String tip = "模块名称：" + moduleName + "，不符合DDD模块命名规范（" + MODULE_NAME_CHECK_MAP.keySet() + ")";
                 Messages.showInfoMessage(tip, "领域驱动-规范验证-结果");
             }
             /**依赖**/
             ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(moduleItem);
             String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
-            List<String> configDepModNames = moduleNameCheckMap.get(shortModuleName);
+            List<String> configDepModNames = MODULE_NAME_CHECK_MAP.get(shortModuleName);
             AtomicBoolean faultDep = new AtomicBoolean(false);
             Arrays.stream(dependentModulesNames).forEach(dependentModuleName -> {
                 String substring = dependentModuleName.substring(dependentModuleName.lastIndexOf(horLine) + 1);
