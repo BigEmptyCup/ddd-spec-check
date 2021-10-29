@@ -77,6 +77,8 @@ public class HelloAction extends AnAction {
             }
             /**依赖**/
             ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(moduleItem);
+            Module[] dependentModules = moduleRootManager.getDependencies();
+
             String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
             List<String> configDepModNames = MODULE_NAME_CHECK_MAP.get(shortModuleName);
             AtomicBoolean faultDep = new AtomicBoolean(false);
